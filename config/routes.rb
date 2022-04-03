@@ -3,7 +3,5 @@ Rails.application.routes.draw do
 
 # Top
 root to: "public/homes#top"
-get "/about" => "public/homes#about", as: "about"
-
 
 end
