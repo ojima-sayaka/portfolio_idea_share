@@ -1,0 +1,12 @@
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: 14639aaa58e24b90b9678536c11808dc.vfs.cloud9.ap-northeast-1.amazonaws.com
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: 14639aaa58e24b90b9678536c11808dc.vfs.cloud9.ap-northeast-1.amazonaws.com
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: 14639aaa58e24b90b9678536c11808dc.vfs.cloud9.ap-northeast-1.amazonaws.com
+Started GET "/" for 219.160.29.148 at 2022-04-02 13:29:05 +0000
+Cannot render console from 219.160.29.148! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-6.1.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-6.1.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 18.7ms | Allocations: 349)
+Completed 200 OK in 53ms (Views: 25.3ms | ActiveRecord: 0.0ms | Allocations: 3166)
+
+
