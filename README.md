@@ -1,35 +1,24 @@
-# ひらめき💡SHARE
+# README
 
-## 概要
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-こんな道具あったらいいな・こんな生き物いたら良いよね！もし、〇〇できたらいいな。できる限りこの世にないような想像のみに特化し、コメントでその投稿について会員同士がやり取りができるサイト
+Things you may want to cover:
 
-## サイトテーマ
-コミュニティサイト
-このテーマを選んだ理由はもし、様々な人の空想のみでのコミュニケーションを取ったら面白そうだと思ったから
+* Ruby version
 
-## テーマを選んだ理由
-正しい情報や考えを発信するサイトは沢山あるが、その逆の正しくない情報や個人の想像のみの情報でコミュニティを作って会話をしあう事が面白そうだと思ったから
+* System dependencies
 
+* Configuration
 
-## ターゲットユーザー
-- 空想好きなな人
-- 都市伝説やオカルトが好きな人
-- 暇な人
+* Database creation
 
-## 利用シーン
-- 時間が余って暇な時
-- 絵に描けないけど、面白い生き物やキャラクターを思いついたとき
-- 短編の面白そうな話を思いついたとき
-- この世にありそうで存在しない情報を流したいとき
+* Database initialization
 
+* How to run the test suite
 
-## 設計書
+* Services (job queues, cache servers, search engines, etc.)
 
+* Deployment instructions
 
-## 開発環境
-- OS：Linux(CentOS)
-- 言語：HTML,CSS,JavaScript,Ruby,SQL
-- フレームワーク：Ruby on Rails
-- JSライブラリ：jQuery
-- IDE：Cloud9
+* ...
