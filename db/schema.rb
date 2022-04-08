@@ -76,7 +76,8 @@ ActiveRecord::Schema.define(version: 2022_04_07_104357) do
   create_table "ideas", force: :cascade do |t|
     t.integer "category_id", null: false
     t.integer "member_id", null: false
-    t.string "idea_detail", null: false
+    t.string "title", null: false
+    t.text "idea_detail", null: false
     t.text "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
