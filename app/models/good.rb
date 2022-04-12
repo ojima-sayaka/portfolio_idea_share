@@ -1,3 +1,3 @@
 class Good < ApplicationRecord
- belongs_to :ideas
+ belongs_to :idea
 end

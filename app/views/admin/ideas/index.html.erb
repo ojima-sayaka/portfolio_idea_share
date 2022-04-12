@@ -1,2 +1,19 @@
-<h1>Admin::Ideas#index</h1>
-<p>Find me in app/views/admin/ideas/index.html.erb</p>
+<div class="container">
+  <h3>投稿一覧</h3><br>
+  <table class="table table-hover">
+    <tr class="active">
+      <th>投稿日時</th>
+      <th>投稿タイトル</th>
+      <th>会員名前</th>
+      <th></th>
+    </tr>
+    <% @ideas.each do |idea| %>
+      <tr>
+        <td><%= idea.created_at %></td>
+        <td><%= link_to admin_ideas_path(idea.member_id) %></td>
+        <td><%= member.name %></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
