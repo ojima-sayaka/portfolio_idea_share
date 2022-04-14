@@ -17,6 +17,10 @@ class Members::IdeasController < ApplicationController
   def edit
   end
 
+# 更新
+  def updata
+  end
+
 
 
 end

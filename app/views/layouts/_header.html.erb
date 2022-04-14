@@ -16,6 +16,7 @@
                 <p class="logincustomer nav-link text-light">ようこそ<%= current_member.name %>さん</p>
               </li>
               <li>
+              <!--binding.irb-->
                 <%= link_to members_member_path(current_member.id), class: "nav-link text-light" do %>
                   マイページ
                 <% end %>

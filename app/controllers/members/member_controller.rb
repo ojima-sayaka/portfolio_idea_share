@@ -2,6 +2,7 @@ class Members::MemberController < ApplicationController
 
 # 会員一覧
   def index
+    @members = Member.all
   end
 
 # 会員詳細（会員が投稿した物のみ表示）
