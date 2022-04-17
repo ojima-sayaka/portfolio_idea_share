@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <h2>設定</h2>
+
+    <%= form_with model: @member, url: members_member_path(@member), method: :patch do |f| %>
+      <p>名前</p>
+      <%= f.text_field :name %>
+      <p>画像</p>
+      <%= f.file_field :profile_image, accept: "image/*" %>
+      <p>説明</p>
+      <%= f.text_area :introduction %>
+      <br><%= f.submit 'Update',class:"btn btn-secondary" %></br>
+    <% end %>
+
+  </div>
+</div>

@@ -1,6 +1,6 @@
 class Idea < ApplicationRecord
   has_one    :goods
-  belongs_to :comment
+  has_many :comments
   belongs_to :member
   belongs_to :category
 end

@@ -1,6 +1,6 @@
 class Admin::IdeasController < ApplicationController
   def index
-    @idea = idea.all
+    @idea = Idea.all
   end
 
   def show
