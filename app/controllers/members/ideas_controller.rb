@@ -2,15 +2,16 @@ class Members::IdeasController < ApplicationController
 
 # 投稿一覧画面（すべての投稿について）
   def index
-    # @ideas = Idea.all
-    @my_ideas = current_member.ideas
+    @my_ideas = Idea.all
     @idea = Idea.new
   end
 
 # 投稿詳細画面(1件の投稿について)
   def show
-    # @idea = Idea
-    @member = Member.find(params[:id])
+    # @my_ideas = current_member.ideas
+    @comment = Comment
+    @idea = Idea.find(params[:id])
+    @member = Member.find(@idea.member_id)
     @ideas = @member.ideas
   end
 

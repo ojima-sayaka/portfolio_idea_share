@@ -1,5 +1,6 @@
 <div class="row">
   <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+     <%= render 'layouts/errors', obj: @member %>
     <h2>設定</h2>
 
     <%= form_with model: @member, url: members_member_path(@member), method: :patch do |f| %>

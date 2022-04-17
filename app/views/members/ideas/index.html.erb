@@ -5,16 +5,23 @@
       <%= render 'members/ideas/idea',idea: @ideas, member: current_member %>
     </div>
      <div class="col-md-8 offset-md-1">
-       <!--ここから投稿ができるようにさせたい。-->
        <h2>投稿一覧</h2>
-       <%= render 'members/ideas/sab',idea: @idea %>
+        <div class="card shadow">
+          <div class="card-body">
+           <%= render 'members/ideas/sab',idea: @idea %>
+         </div>
+       </div>
       <hr>
        <div class="row">
          <% @my_ideas.each do |idea| %>
            <div class="col-12 mb-3">
              <div class="card shadow">
                <div class="card-body">
+                 <div></div>
+
                  <h5 class="card-title"><%= link_to idea.title, members_idea_path(idea) %></h5>
+                 <h5><%  %></h5>
+
                </div>
              </div>
            </div>

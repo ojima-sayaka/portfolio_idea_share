@@ -9,9 +9,12 @@
   <tbody>
     <% members.each do |member| %>
       <tr>
-        <td><%= image_tag member.get_profile_image(50,50) %></td>
+        <td>
+          <%#= link_to 'Show', member, class: "member_#{member.id}" %>
+          <%= image_tag member.get_profile_image(50,50) %>
+        </td>
         <td><%= member.name %></td>
-        <td><%= link_to 'Show', member, class: "member_#{member.id}" %></td>
+        <td></td>
       </tr>
     <% end %>
   </tbody>
