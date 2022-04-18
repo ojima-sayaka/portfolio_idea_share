@@ -23,10 +23,10 @@ Rails.application.routes.draw do
   # member
   namespace :members do
     resources :ideas do
+      resources :good , only: [:create , :destroy]
       resources :comments
     end
     resources :member do
-      resources :good
     end
   end
 

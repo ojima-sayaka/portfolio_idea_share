@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2022_04_07_104357) do
 
   create_table "goods", force: :cascade do |t|
     t.string "member_id", null: false
+    t.string "idea_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
