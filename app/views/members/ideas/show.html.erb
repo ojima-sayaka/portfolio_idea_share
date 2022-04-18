@@ -3,7 +3,7 @@
   <div class='row'>
     <div class='col-md-3'>
       <h2>User info</h2>
-      <%= render 'members/ideas/idea', idea: @ideas, member: current_member %>
+      <%= render 'members/ideas/idea', idea: @idea, member: current_member %>
 ここに投稿総数、総いいね、表示なるのは投稿した会員
 ここに来れるのは投稿一覧からか、会員一覧から見てここに来ることが出来る
 
@@ -11,9 +11,9 @@
     </div>
     <div class='col-md-8 offset-md-1'>
   		<h2>投稿詳細</h2>
-  		  
+
   		<h2 class="mt-3">新規投稿</h2>
-      <%= form_with model: @comment,url: members_ideas_path, method: :post do |f| %>
+      <%= form_with model: @comment,url: members_idea_comments_path(@idea), method: :post do |f| %>
         <div class="form-group">
           <%= f.label :投稿内容 %>
           <%= f.text_area :comment_detail, class: 'form-control' %>

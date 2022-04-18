@@ -59,10 +59,11 @@ ActiveRecord::Schema.define(version: 2022_04_07_104357) do
   end
 
   create_table "comments", force: :cascade do |t|
+    t.integer "idea_id"
     t.string "comment_detail"
     t.boolean "is_deleted", default: false, null: false
-    t.datetime "deleted_at", null: false
-    t.integer "customer_id", null: false
+    t.datetime "deleted_at"
+    t.integer "member_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

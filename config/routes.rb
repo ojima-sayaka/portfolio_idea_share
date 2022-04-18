@@ -22,9 +22,12 @@ Rails.application.routes.draw do
 
   # member
   namespace :members do
-    resources :ideas
-    resources :member
-    resources :good
+    resources :ideas do
+      resources :comments
+    end
+    resources :member do
+      resources :good
+    end
   end
 
   #search
