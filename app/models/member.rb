@@ -6,6 +6,7 @@ class Member < ApplicationRecord
 
   validates :name,presence:true
 
+  has_many :goods
   has_many :ideas, dependent: :destroy
   has_one_attached :profile_image
 
