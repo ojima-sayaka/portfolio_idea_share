@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <div class="row">
-    <h2>ジャンル一覧・追加</h2>
+    <h2>カテゴリー　一覧・追加</h2>
     <% if @category.errors.any? %>
       <%= @category.errors.count %>件のエラーが発生しました
         <ul>
@@ -10,7 +10,7 @@
         </ul>
     <% end %>
       <div class="col-sm-9 offset-sm-1">
-        <%= form_with model: @category,url: admin_category_path(@category) do |f| %>
+        <%= form_with model: Category.new, url: admin_category_index_path() do |f| %>
           <div class="field row ">
             <%= f.text_field :name %>
             <%= f.submit "追加", class: "btn btn-primary" %>
@@ -23,8 +23,8 @@
             <th>状態</th>
           </tr>
         </thead>
-        <tbody>
           <% @categores.each do |category| %>
+        <tbody>
             <tr>
               <td><%= category.name %></td>
               <td><%= link_to "編集する", edit_admin_category_path(category.id) ,class: "btn btn-primary" %></td>

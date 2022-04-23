@@ -8,6 +8,7 @@ class Members::MemberController < ApplicationController
 # 会員詳細（会員が投稿した物のみ表示）
   def show
     @idea = Idea.find(params[:id])
+    @idea
   end
 
 # 会員編集画面

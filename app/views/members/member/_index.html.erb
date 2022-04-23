@@ -7,11 +7,13 @@
     </tr>
   </thead>
   <tbody>
+    <!--表示させる　画像（クリックしてからの遷移先は会員詳細ページ）・名前-->
     <% members.each do |member| %>
       <tr>
         <td>
-          <%#= link_to 'Show', member, class: "member_#{member.id}" %>
-          <%= image_tag member.get_profile_image(50,50) %>
+          <%= link_to members_idea_path (member) do %>
+            <%= image_tag member.get_profile_image(50,50) %>
+          <% end %>
         </td>
         <td><%= member.name %></td>
         <td></td>

@@ -56,7 +56,7 @@ class Members::IdeasController < ApplicationController
 private
 
   def idea_params
-    params.require(:idea).permit(:idea_detail, :title, :category_id)
+    params.require(:idea).permit(:idea_detail, :title, :category_id, :idea_image )
   end
 
 

@@ -6,10 +6,19 @@ class Idea < ApplicationRecord
 
   validates :title,presence:true
   validates :idea_detail,presence:true,length:{maximum:600}
+  has_one_attached :idea_image
 
 # いいね
   def favorited_by?(member)
    self.goods.where(member_id: member.id).exists?
+  end
+
+  def get_image(width, height)
+    unless idea_image.attached?
+      file_path = Rails.root.join('app/assets/images/350_no_image.jpeg')
+      idea_image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
+    end
+    idea_image.variant(resize_to_limit: [width, height]).processed
   end
 
 # 検索

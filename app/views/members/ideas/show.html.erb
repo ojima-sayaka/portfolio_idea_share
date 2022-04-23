@@ -4,15 +4,39 @@
     <div class='col-md-3'>
       <h2>User info</h2>
       <%= render 'members/ideas/idea', idea: @idea, member: current_member %>
-ここに投稿総数、総いいね、表示なるのは投稿した会員
-ここに来れるのは投稿一覧からか、会員一覧から見てここに来ることが出来る
+<p>★</p>
 
   <%= @sample %>
     </div>
     <div class='col-md-8 offset-md-1'>
-  		<h2>投稿詳細</h2>
+      <div class="form-group">
+        <div class="card shadow">
+          <div class="card-body">
+        		<h2>投稿詳細</h2>
+        		<thead>
+        		  <th>
+        		    <div class="form-group">
+        		      <h5>タイトル</h5>
+        		      <td><%= @idea.title %><td>
+        		    </div>
+        		    <div class="form-group">
+        		      <h5>投稿内容</h5>
+        		      <td><%= @idea.idea_detail %></td>
+        		    </div>
+        		    <td>
+        		      <h5>名前</h5>
+                  <%= @idea.member.name %>
+                  <h5>投稿画像</h5>
+        		      <%= image_tag @idea.get_image(350,350) %>
 
-  		<h2 class="mt-3">新規投稿</h2>
+        		    </td>
+        		    <td><%= @idea.category_id %></td>
+        		  </th>
+        		</thead>
+        	</div>
+      	</div>
+  		</div>
+  		<h4 class="mt-3">コメント投稿</h4>
       <%= form_with model: @comment,url: members_idea_comments_path(@idea), method: :post do |f| %>
         <div class="form-group">
           <%= f.label :投稿内容 %>
@@ -24,6 +48,19 @@
           </div>
         </div>
       <% end %>
+      <!--コメント-->
+          <div class="comments">
+            <% @idea.comments.each do |idea_comment| %>
+            <hr align="center"></hr>
+              <p><%#= image_tag idea_comment.member.profile_image(50,350) %></p>
+              <%= idea_comment.member.name %>
+              <%= idea_comment.comment_detail %>
+              <% if idea_comment.member == current_member %>
+                <%#= link_to "Destroy", book_book_comment_path(book_comment.book, book_comment), method: :delete, class: "btn-danger btn btn-sm "%>
+              <% end %>
+            <% end %>
+          </div>
+
     </div>
   </div>
 </div>

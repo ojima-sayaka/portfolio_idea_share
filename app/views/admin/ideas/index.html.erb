@@ -1,22 +1,45 @@
 <div class="container">
-  <h3>投稿一覧</h3><br>
+  <h3>投稿一覧</h3>
   <table class="table table-hover">
     <tr class="active">
       <th>投稿日時</th>
+      <th>会員ID</th>
       <th>投稿タイトル</th>
       <th>会員名前</th>
+      <th>投稿削除</th>
       <th></th>
     </tr>
+  </table>
     <% @my_ideas.each do |idea| %>
       <div class="col-12 mb-3">
         <div class="card shadow">
           <div class="card-body">
-            <div></div>
-            <h5 class="card-title"><%= link_to idea.title, members_idea_path(idea) %></h5>
-            <h5></h5>
+
+            <!--投稿日時-->
+            <th><%= idea.member.created_at %></th>
+
+            <!--会員ID-->
+            <th><%= idea.member.id %></th>
+
+            <!--投稿タイトル-->
+            <th>
+                <h5 class="card-title"><%= link_to idea.title, members_idea_path(idea) %></h5>
+            </th>
+
+            <!--会員名前-->
+            <th><%= idea.member.name %></th>
+
+            <!--投稿削除-->
+            <th>
+              <%# if @member.is_deleted == false %>
+                <!--有効-->
+              <%# else %>
+                <!--退会済み-->
+              <%# end %>
+            </th>
 
           </div>
         </div>
       </div>
-  </table>
+    <% end %>
 </div>

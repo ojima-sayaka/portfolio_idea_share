@@ -1,32 +1,34 @@
+<!--アイデア投稿一覧画面（投稿機能・いいね機能）-->
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <h2>User info</h2>
+      <h2>Member info</h2>
       <%= render 'members/ideas/idea',idea: @ideas, member: current_member %>
     </div>
      <div class="col-md-8 offset-md-1">
-       <h2>投稿一覧</h2>
-        <div class="card shadow">
-          <div class="card-body">
-           <%= render 'members/ideas/sab',idea: @idea %>
-         </div>
-       </div>
-      <hr>
-       <div class="row">
+      <h2>投稿一覧</h2>
+      <div class="card shadow">
+        <div class="card-body">
+          <%= render 'members/ideas/sab',idea: @idea %>
+        </div>
+      </div>
+        <div class="row">
+        <tr>
+          <hr align="center">
          <% @my_ideas.each do |idea| %>
            <div class="col-12 mb-3">
              <div class="card shadow">
                <div class="card-body">
-                 <div></div>
                  <h5 class="card-title"><%= link_to idea.title, members_idea_path(idea) %></h5>
-                 <h5><%  %></h5>
-
+                 <%= idea.member.name %>
+                 <%#= render 'member/good/btn' ここに定義した変数入れる 多分エラー出る　%>
                </div>
              </div>
            </div>
          <% end %>
+         </tr>
        </div>
-     </div>+
+     </div>
   </div>
 </div>
 

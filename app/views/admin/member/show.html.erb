@@ -1,2 +1,37 @@
-<h1>Admin::Member#show</h1>
-<p>Find me in app/views/admin/member/show.html.erb</p>
+<table class='table'>
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+      <th>有効・無効</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--表示させる　画像（クリックしてからの遷移先は会員詳細ページ）・名前-->
+    <%# @member.each do |member| %>
+      <tr>
+        <!--会員画像-->
+        <td>
+          <%= image_tag member.get_profile_image(50,50) %>
+        </td>
+        <!--会員名前-->
+        <td><%= member.name %></td>
+        <!--会員有効・無効-->
+        <td>
+          <%# if member.is_deleted == false %>
+            有効
+            <%# else %>
+              退会済み
+          <%# end %>
+          </td>
+        </td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+ <div class='col-md-8 offset-md-1'>
+   これまでの投稿
+ </div>
