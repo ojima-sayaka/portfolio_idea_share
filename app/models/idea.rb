@@ -1,5 +1,5 @@
 class Idea < ApplicationRecord
-  has_one    :goods
+  has_many:goods
   has_many :comments, dependent: :destroy
   belongs_to :member
   belongs_to :category

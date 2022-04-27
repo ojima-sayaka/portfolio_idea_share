@@ -1,5 +1,7 @@
 class Members::GoodController < ApplicationController
   def index
+    @ideas = Idea.all
+    @good_ideas = @ideas.find(goods)
   end
 
   def create

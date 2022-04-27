@@ -4,12 +4,10 @@
       <h2>User info</h2>
       <%= render 'members/ideas/idea',idea: @ideas, member: current_member %>
       <!--ゲストには投稿総数・いいね非表示、会員のみ見ることが出来る。その説明はアバウト画面で見ることができる。-->
-      <h4 class="mt-3">投稿総数</h2>
-      <h4 class="mt-3">総いいね</h2>
     </div>
     <div class='col-md-8 offset-md-1'>
       <h2>これまでの投稿</h2>
-        <%#= render'members/member/show', @ideas, member: current_member %>
+        <%= render 'members/member/show',ideas: @ideas, member: current_member %>
     </div>
   </div>
 </div>

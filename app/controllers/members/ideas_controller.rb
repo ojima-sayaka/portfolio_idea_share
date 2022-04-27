@@ -4,11 +4,12 @@ class Members::IdeasController < ApplicationController
   def index
     @my_ideas = Idea.all
     @idea = Idea.new
+    # @my_idea = current_member.ideas
+    
   end
 
 # 投稿詳細画面(1件の投稿について)
   def show
-    # @my_ideas = current_member.ideas
     @comment = Comment
     @idea = Idea.find(params[:id])
     @member = Member.find(@idea.member_id)

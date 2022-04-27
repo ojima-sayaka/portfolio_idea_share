@@ -10,6 +10,12 @@ class Members::CommentsController < ApplicationController
       render 'members/ideas/show'
     end
   end
+
+  def destroy
+    idea = Idea.find(params[:idea_id])
+    Comment.find(params[:id]).destroy
+    redirect_to  members_idea_path(idea)
+  end
 private
 
   def comment_params

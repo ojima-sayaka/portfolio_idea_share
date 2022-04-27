@@ -53,11 +53,17 @@
             <% @idea.comments.each do |idea_comment| %>
             <hr align="center"></hr>
               <p><%#= image_tag idea_comment.member.profile_image(50,350) %></p>
-              <%= idea_comment.member.name %>
-              <%= idea_comment.comment_detail %>
-              <% if idea_comment.member == current_member %>
-                <%#= link_to "Destroy", book_book_comment_path(book_comment.book, book_comment), method: :delete, class: "btn-danger btn btn-sm "%>
-              <% end %>
+              <td>
+                <%= idea_comment.member.name %>
+              </td>
+              <td>
+                <%= idea_comment.comment_detail %>
+              </td>
+              <td>
+                <% if idea_comment.member == current_member %>
+                  <%= link_to "Destroy", members_idea_comment_path(idea_comment.idea, idea_comment), method: :delete, class: "btn-danger btn btn-sm "%>
+                <% end %>
+              </td>
             <% end %>
           </div>
 

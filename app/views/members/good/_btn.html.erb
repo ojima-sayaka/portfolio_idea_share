@@ -1,11 +1,11 @@
-<% if idea.favorited_by?(current_user) %>
-  <%= link_to book_favorites_path(book), method: :delete, remote: true do %>
+<% if idea.favorited_by?(current_member) %>
+  <%= link_to members_idea_good_path(idea), method: :delete, remote: true do %>
     <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
-    <%= book.favorites.count %> いいね
+    <%= idea.goods.count %> いいね
   <% end %>
 <% else %>
-  <%= link_to book_favorites_path(book), method: :post, remote: true do %>
+  <%= link_to members_idea_good_index_path(idea), method: :post, remote: true do %>
     <i class="fas fa-heart" aria-hidden="true"></i>
-    <%= book.favorites.count %> いいね
+    <%= idea.goods.count %> いいね
   <% end %>
 <% end %>
