@@ -1,0 +1,72 @@
+<!--投稿詳細画面-->
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <%= render 'members/ideas/idea', idea: @idea, member: current_member %>
+<p>★</p>
+
+  <%= @sample %>
+    </div>
+    <div class='col-md-8 offset-md-1'>
+      <div class="form-group">
+        <div class="card shadow">
+          <div class="card-body">
+        		<h2>投稿詳細</h2>
+        		<thead>
+        		  <th>
+        		    <div class="form-group">
+        		      <h5>タイトル</h5>
+        		      <td><%= @idea.title %><td>
+        		    </div>
+        		    <div class="form-group">
+        		      <h5>投稿内容</h5>
+        		      <td><%= @idea.idea_detail %></td>
+        		    </div>
+        		    <td>
+        		      <h5>名前</h5>
+                  <%= @idea.member.name %>
+                  <h5>投稿画像</h5>
+        		      <%= image_tag @idea.get_image(350,350) %>
+
+        		    </td>
+        		    <td><%= @idea.category_id %></td>
+        		  </th>
+        		</thead>
+        	</div>
+      	</div>
+  		</div>
+  		<h4 class="mt-3">コメント投稿</h4>
+      <%= form_with model: @comment,url: members_idea_comments_path(@idea), method: :post do |f| %>
+        <div class="form-group">
+          <%= f.label :投稿内容 %>
+          <%= f.text_area :comment_detail, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <div class="col-md-5 mx-auto">
+            <%= f.submit '投稿',class:"btn btn-success btn-block" %>
+          </div>
+        </div>
+      <% end %>
+      <!--コメント-->
+          <div class="comments">
+            <% @idea.comments.each do |idea_comment| %>
+            <hr align="center"></hr>
+              <p><%#= image_tag idea_comment.member.profile_image(50,350) %></p>
+              <td>
+                <%= idea_comment.member.name %>
+              </td>
+              <td>
+                <%= idea_comment.comment_detail %>
+              </td>
+              <td>
+                <% if idea_comment.member == current_member %>
+                  <%= link_to "Destroy", members_idea_comment_path(idea_comment.idea, idea_comment), method: :delete, class: "btn-danger btn btn-sm "%>
+                <% end %>
+              </td>
+            <% end %>
+          </div>
+
+    </div>
+  </div>
+</div>
