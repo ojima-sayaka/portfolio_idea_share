@@ -3,7 +3,7 @@ before_action :authenticate_admin!
   def index
     @categores = Category.page(params[:page]).per(8)
     # binding.irb
-    @category = Category.first
+    @category = Category.new
   end
 
   def create

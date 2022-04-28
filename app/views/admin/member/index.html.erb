@@ -18,9 +18,7 @@
         <td><%= member.name %></td>
         <td>
           <!--投稿を削除-->
-          <% if idea.member == current_member %>
-            <%= link_to "Destroy", members_idea_path(idea), method: :delete, class: "btn-danger btn btn-sm "%>
-          <% end %>
+            <%= link_to "Destroy", member_registration_path, method: :delete, class: "btn-danger btn btn-sm "%>
         </td>
       </tr>
     <% end %>

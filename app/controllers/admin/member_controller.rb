@@ -1,6 +1,7 @@
 class Admin::MemberController < ApplicationController
   def index
     @members = Member.all
+
   end
 
   def show
