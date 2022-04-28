@@ -4,9 +4,9 @@ class Members::IdeasController < ApplicationController
   def index
     @my_ideas = Idea.all
     @idea = Idea.new
-    
+
     # @my_idea = current_member.ideas
-    
+
   end
 
 # 投稿詳細画面(1件の投稿について)
@@ -25,10 +25,10 @@ class Members::IdeasController < ApplicationController
   def create
     @idea =Idea.new(idea_params)
     @idea.member_id = current_member.id
-    if @idea.save!
+    if @idea.save
       redirect_to members_ideas_path, notice: "You have created book successfully."
     else
-      @ideas = Idea.all
+      @my_ideas = Idea.all
       @member = current_member
       render :index
     end
