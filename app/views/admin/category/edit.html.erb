@@ -1,0 +1,15 @@
+<div class="container takasa">
+  <div class="row">
+    <div class="col-xs-9">
+      <h2>カテゴリー編集</h2><br>
+       <%= form_for @category, url: admin_category_path(@category.id), method: :patch do |f| %>
+        <div class="field row">
+          <lavel>カテゴリー</lavel>
+          <%= f.text_field :name %>
+          <%= f.submit "変更を保存する", class: "btn btn-primary" %>
+        </div>
+       <% end %>
+    </div>
+  </div>
+</div>
+

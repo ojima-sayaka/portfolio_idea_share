@@ -1,20 +1,47 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-# Top
-root "public/homes#top"
-get 'about', to: "public/homes#about"
 
-# member
-# search
+    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  #devise
+  devise_for :admins, controllers: {
+    sessions: 'admin/sessions'
+  }
+  devise_for :members, controllers: {
+    sessions: 'members/sessions'
+  }
 
-# 管理者
-namespace :admin do
-  root "homes#top"
+  # top
+  root "members/home#top"
+  # post '/home/guest_sign_in', to: 'homes#guest_sign_in'
+  get "/about", to: "members/home#about", as: "about"
 
-end
-#devise
- # devise_for :members,skip:[:passwords], controllers: {registrations: "public/registrations",sessions: 'public/sessions'}
- # devise_for :admin,skip:[:registrations, :passwords], controllers: {sessions: "admin/sessions"}
+  # guest
+  devise_scope :member do
+    post 'guest_sign_in', to: 'members/sessions#guest_sign_in'
+  end
+
+  # member
+  namespace :members do
+    resources :ideas do
+      resources :good 
+      # , only: [:create , :destroy]
+      resources :comments
+    end
+    resources :member do
+    end
+  end
+
+  #search
+
+  # admin
+  namespace :admin do
+    root "home#top"
+    resources :member
+    resources :category
+    resources :ideas
+  end
+
+
+
 
 end

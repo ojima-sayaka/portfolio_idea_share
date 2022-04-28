@@ -1,0 +1,4 @@
+DB_USERNAME="root"
+DB_PASSWORD="aaaaaa"
+DB_HOST="rds-mysql-server.cdvbb31gyha7.ap-northeast-1.rds.amazonaws.com"
+DB_DATABASE="hirameki_share"

@@ -1,0 +1,13 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <%= render 'members/ideas/idea',idea: @ideas, member: current_member %>
+      <!--ゲストには投稿総数・いいね非表示、会員のみ見ることが出来る。その説明はアバウト画面で見ることができる。-->
+    </div>
+    <div class='col-md-8 offset-md-1'>
+      <h2>これまでの投稿</h2>
+        <%= render 'members/member/show',ideas: @ideas, member: current_member %>
+    </div>
+  </div>
+</div>

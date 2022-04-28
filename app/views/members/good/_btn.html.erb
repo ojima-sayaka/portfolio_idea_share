@@ -1,0 +1,11 @@
+<% if idea.favorited_by?(current_member) %>
+  <%= link_to members_idea_good_path(idea), method: :delete, remote: true do %>
+    <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
+    <%= idea.goods.count %> いいね
+  <% end %>
+<% else %>
+  <%= link_to members_idea_good_index_path(idea), method: :post, remote: true do %>
+    <i class="fas fa-heart" aria-hidden="true"></i>
+    <%= idea.goods.count %> いいね
+  <% end %>
+<% end %>
