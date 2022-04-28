@@ -140,3 +140,63 @@ Processing by Public::HomesController#top as HTML
 Completed 200 OK in 44ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 11065)
 
 
+Started GET "/" for 61.125.221.91 at 2022-04-28 09:40:40 +0000
+Cannot render console from 61.125.221.91! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Public::HomesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering public/homes/top.html.erb within layouts/application
+  Rendered public/homes/top.html.erb within layouts/application (Duration: 0.6ms | Allocations: 239)
+[Webpacker] Compiling...
+Started GET "/about" for 61.125.221.91 at 2022-04-28 09:40:42 +0000
+Cannot render console from 61.125.221.91! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Public::HomesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering public/homes/about.html.erb within layouts/application
+  Rendered public/homes/about.html.erb within layouts/application (Duration: 0.3ms | Allocations: 106)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/ec2-user/environment/hirameki_share/public/packs
+[Webpacker] warning ../../package.json: No license field
+
+[Webpacker] Hash: 2034dd941d5476d8645c
+Version: webpack 4.46.0
+Time: 2242ms
+Built at: 04/28/2022 9:40:45 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-3dd0dc24d9c39bc09227.js    125 KiB  application  [emitted] [immutable]  application
+js/application-3dd0dc24d9c39bc09227.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-3dd0dc24d9c39bc09227.js js/application-3dd0dc24d9c39bc09227.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 6185.7ms | Allocations: 31261)
+Completed 200 OK in 6200ms (Views: 6188.6ms | ActiveRecord: 0.0ms | Allocations: 34143)
+
+
+[Webpacker] Compiled all packs in /home/ec2-user/environment/hirameki_share/public/packs
+[Webpacker] warning ../../package.json: No license field
+
+[Webpacker] Hash: 2034dd941d5476d8645c
+Version: webpack 4.46.0
+Time: 1573ms
+Built at: 04/28/2022 9:40:46 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-3dd0dc24d9c39bc09227.js    125 KiB  application  [emitted] [immutable]  application
+js/application-3dd0dc24d9c39bc09227.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-3dd0dc24d9c39bc09227.js js/application-3dd0dc24d9c39bc09227.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 4188.6ms | Allocations: 10508)
+Completed 200 OK in 4191ms (Views: 4190.0ms | ActiveRecord: 0.0ms | Allocations: 11034)
+
+
