@@ -16,7 +16,12 @@
           <% end %>
         </td>
         <td><%= member.name %></td>
-        <td></td>
+        <td>
+          <!--投稿を削除-->
+          <% if idea.member == current_member %>
+            <%= link_to "Destroy", members_idea_path(idea), method: :delete, class: "btn-danger btn btn-sm "%>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </table>

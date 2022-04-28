@@ -4,6 +4,7 @@ class Members::IdeasController < ApplicationController
   def index
     @my_ideas = Idea.all
     @idea = Idea.new
+    
     # @my_idea = current_member.ideas
     
   end
